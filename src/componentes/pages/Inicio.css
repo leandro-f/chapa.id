@@ -1,0 +1,43 @@
+.cont_inicio{
+    background-color: antiquewhite;
+    text-align: center;
+}
+    .user-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centra las tarjetas horizontalmente */
+        gap: 20px;
+    }
+  
+  .user-card {
+    width: 300px; /* Asegura que las tarjetas tengan un ancho fijo */
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+    background-color: #007bff;
+  }
+  
+  .user-card img {
+    max-width: 70%; /* Centra la imagen horizontalmente en la tarjeta */
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .user-card button {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50%; /* Establece el ancho del botón al 50% del ancho de la tarjeta */
+    margin: 0 auto; /* Centra el botón horizontalmente en la tarjeta */
+  }
+  
+  .user-card button:hover {
+    background-color: #0056b3;
+  }
+  

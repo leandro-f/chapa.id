@@ -1,0 +1,47 @@
+.cont_datos {
+    background-color: rgba(75, 171, 245, 0.806);
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a horizontal */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .cont1 {
+    border: 4px solid black;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: bisque;
+    margin: 10px; /* Agrega margen entre las tarjetas de usuario */
+    padding: 20px; /* Agrega espaciado interno */
+    text-align: center;
+  }
+  
+  .cont1 img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px; /* Añade un poco de borde redondeado a las imágenes */
+  }
+  
+  .cont1 p {
+    font-size: 20px;
+    margin: 8px 0;
+  }
+  
+  @media (max-width: 600px) {
+  
+    .App h2 {
+      font-size: 24px;
+    }
+    .App h1 {
+      text-align: center;
+    }
+    .datos {
+      width: 90%;
+    }
+  }
+  
