@@ -25,9 +25,7 @@ const PerfilUsuario = () => {
     obtenerUsuario();
   }, [nombre]);
 
-  if (!user) {
-    return <div>Usuario no encontrado.</div>;
-  }
+ 
 
   return (
     <div className="cont_datos">
