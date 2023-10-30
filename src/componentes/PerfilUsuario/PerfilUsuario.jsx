@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase/firebaseconfig';
-import"./PerfilUsuario.css"
+import "./PerfilUsuario.css"
+
 const PerfilUsuario = () => {
   const { nombre } = useParams();
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({}); // Inicializa user con un objeto vacío
 
   const obtenerUsuario = async () => {
     const usuariosCollection = collection(db, 'usuarios');
@@ -16,16 +17,18 @@ const PerfilUsuario = () => {
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
       });
-    } else {
-      setUser(null);
     }
+    // No necesitas un else aquí, porque user ya está inicializado con un objeto vacío
   };
 
   useEffect(() => {
     obtenerUsuario();
   }, [nombre]);
 
- 
+  // Comprueba si user es un objeto vacío antes de renderizar
+  if (Object.keys(user).length === 0) {
+    return null; // No renderiza nada si user está vacío
+  }
 
   return (
     <div className="cont_datos">
@@ -43,5 +46,4 @@ const PerfilUsuario = () => {
 };
 
 export default PerfilUsuario;
-
 
