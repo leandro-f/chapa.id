@@ -6,7 +6,7 @@ import "./PerfilUsuario.css"
 
 const PerfilUsuario = () => {
   const { nombre } = useParams();
-  const [user, setUser] = useState({}); // Inicializa user con un objeto vacío
+  const [user, setUser] = useState({});
 
   const obtenerUsuario = async () => {
     const usuariosCollection = collection(db, 'usuarios');
@@ -18,16 +18,16 @@ const PerfilUsuario = () => {
         setUser(doc.data());
       });
     }
-    // No necesitas un else aquí, porque user ya está inicializado con un objeto vacío
+ 
   };
 
   useEffect(() => {
     obtenerUsuario();
   }, [nombre]);
 
-  // Comprueba si user es un objeto vacío antes de renderizar
+
   if (Object.keys(user).length === 0) {
-    return null; // No renderiza nada si user está vacío
+    return null; 
   }
 
   return (
@@ -36,9 +36,12 @@ const PerfilUsuario = () => {
         <div>
           <img src={user.imagen} alt="Descripción de la imagen" />
           <h2>{user.nombre}</h2>
-          <p>DNI: {user.dni}</p>
-          <p>Fecha de nacimiento: {user.fechaNacimiento}</p>
-          <p>Dirección: {user.direccion}</p>
+          <p><b>DNI:</b> {user.dni}</p>
+          <p><b>Cargo:</b> {user.fechaNacimiento}</p>
+          {/* <p>Dirección: {user.direccion}</p> */}
+        </div>
+        <div className='logo-container'>
+          <img className='logo' src="/imagenes/sifa_logo.png" alt="" />
         </div>
       </div>
     </div>
